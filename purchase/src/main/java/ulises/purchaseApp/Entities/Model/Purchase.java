@@ -1,5 +1,5 @@
 
-package ulises.projectDemo.Entities.Model;
+package ulises.purchaseApp.Entities.Model;
 
 /**
  *
@@ -17,8 +17,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import ulises.projectDemo.Entities.Enums.PaymentTypeEnum;
-import ulises.projectDemo.Entities.Enums.PurchaseStatusEnum;
+import ulises.purchaseApp.Entities.Enums.PaymentTypeEnum;
+import ulises.purchaseApp.Entities.Enums.PurchaseStatusEnum;
 
 @Entity
 public class Purchase {

@@ -1,4 +1,4 @@
-package ulises.projectDemo.Entities.Enums;
+package ulises.purchaseApp.Entities.Enums;
 
 public enum PaymentTypeEnum {
   CASH,

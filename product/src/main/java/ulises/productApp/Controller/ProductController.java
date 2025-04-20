@@ -1,4 +1,4 @@
-package ulises.projectDemo.Controller;
+package ulises.productApp.Controller;
 
 import java.util.List;
 import java.util.UUID;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ulises.projectDemo.Entities.Model.Product;
-import ulises.projectDemo.Services.ProductService;
+import ulises.productApp.Entities.Model.Product;
+import ulises.productApp.Services.ProductService;
 
 @RestController
 @RequestMapping("/api/products")

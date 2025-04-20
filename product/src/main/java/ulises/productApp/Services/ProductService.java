@@ -1,4 +1,4 @@
-package ulises.projectDemo.Services;
+package ulises.productApp.Services;
 
 import java.util.List;
 import java.util.UUID;
@@ -6,8 +6,8 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ulises.projectDemo.Entities.Model.Product;
-import ulises.projectDemo.repository.ProductRepository;
+import ulises.productApp.Entities.Model.Product;
+import ulises.productApp.repository.ProductRepository;
 
 @Service
 public class ProductService {

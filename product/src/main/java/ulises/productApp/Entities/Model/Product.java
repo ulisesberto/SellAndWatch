@@ -1,4 +1,4 @@
-package ulises.projectDemo.Entities.Model;
+package ulises.productApp.Entities.Model;
 
 import java.math.BigDecimal;
 import java.util.UUID;
