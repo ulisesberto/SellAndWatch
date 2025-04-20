@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "6fd41826-eb64-45c6-b278-7e68f81c3ed9",
+		"name": "SellAndWatch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19489090"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "create products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  { \"name\": \"Producto 1\", \"price\": 10.99, \"quantity\": 100 },\r\n  { \"name\": \"Producto 2\", \"price\": 15.49, \"quantity\": 200 },\r\n  { \"name\": \"Producto 3\", \"price\": 9.99, \"quantity\": 150 },\r\n  { \"name\": \"Producto 4\", \"price\": 20.00, \"quantity\": 80 },\r\n  { \"name\": \"Producto 5\", \"price\": 5.75, \"quantity\": 300 },\r\n  { \"name\": \"Producto 6\", \"price\": 12.30, \"quantity\": 250 },\r\n  { \"name\": \"Producto 7\", \"price\": 18.90, \"quantity\": 70 },\r\n  { \"name\": \"Producto 8\", \"price\": 8.40, \"quantity\": 400 },\r\n  { \"name\": \"Producto 9\", \"price\": 7.20, \"quantity\": 60 },\r\n  { \"name\": \"Producto 10\", \"price\": 13.99, \"quantity\": 90 },\r\n  { \"name\": \"Producto 11\", \"price\": 11.99, \"quantity\": 110 },\r\n  { \"name\": \"Producto 12\", \"price\": 6.50, \"quantity\": 220 },\r\n  { \"name\": \"Producto 13\", \"price\": 19.99, \"quantity\": 30 },\r\n  { \"name\": \"Producto 14\", \"price\": 14.25, \"quantity\": 140 },\r\n  { \"name\": \"Producto 15\", \"price\": 16.00, \"quantity\": 170 },\r\n  { \"name\": \"Producto 16\", \"price\": 3.99, \"quantity\": 320 },\r\n  { \"name\": \"Producto 17\", \"price\": 21.50, \"quantity\": 85 },\r\n  { \"name\": \"Producto 18\", \"price\": 17.75, \"quantity\": 60 },\r\n  { \"name\": \"Producto 19\", \"price\": 4.30, \"quantity\": 200 },\r\n  { \"name\": \"Producto 20\", \"price\": 10.00, \"quantity\": 180 },\r\n  { \"name\": \"Producto 21\", \"price\": 7.99, \"quantity\": 130 },\r\n  { \"name\": \"Producto 22\", \"price\": 22.99, \"quantity\": 40 },\r\n  { \"name\": \"Producto 23\", \"price\": 13.45, \"quantity\": 160 },\r\n  { \"name\": \"Producto 24\", \"price\": 12.99, \"quantity\": 190 },\r\n  { \"name\": \"Producto 25\", \"price\": 9.49, \"quantity\": 210 },\r\n  { \"name\": \"Producto 26\", \"price\": 15.75, \"quantity\": 90 },\r\n  { \"name\": \"Producto 27\", \"price\": 18.00, \"quantity\": 70 },\r\n  { \"name\": \"Producto 28\", \"price\": 5.99, \"quantity\": 310 },\r\n  { \"name\": \"Producto 29\", \"price\": 6.80, \"quantity\": 100 },\r\n  { \"name\": \"Producto 30\", \"price\": 8.90, \"quantity\": 120 },\r\n  { \"name\": \"Producto 31\", \"price\": 14.99, \"quantity\": 140 },\r\n  { \"name\": \"Producto 32\", \"price\": 17.30, \"quantity\": 160 },\r\n  { \"name\": \"Producto 33\", \"price\": 11.50, \"quantity\": 190 },\r\n  { \"name\": \"Producto 34\", \"price\": 16.45, \"quantity\": 60 },\r\n  { \"name\": \"Producto 35\", \"price\": 13.10, \"quantity\": 100 },\r\n  { \"name\": \"Producto 36\", \"price\": 19.25, \"quantity\": 80 },\r\n  { \"name\": \"Producto 37\", \"price\": 9.00, \"quantity\": 250 },\r\n  { \"name\": \"Producto 38\", \"price\": 7.10, \"quantity\": 300 },\r\n  { \"name\": \"Producto 39\", \"price\": 5.20, \"quantity\": 400 },\r\n  { \"name\": \"Producto 40\", \"price\": 10.10, \"quantity\": 220 },\r\n  { \"name\": \"Producto 41\", \"price\": 12.20, \"quantity\": 170 },\r\n  { \"name\": \"Producto 42\", \"price\": 6.60, \"quantity\": 150 },\r\n  { \"name\": \"Producto 43\", \"price\": 4.99, \"quantity\": 350 },\r\n  { \"name\": \"Producto 44\", \"price\": 8.30, \"quantity\": 310 },\r\n  { \"name\": \"Producto 45\", \"price\": 11.75, \"quantity\": 130 },\r\n  { \"name\": \"Producto 46\", \"price\": 14.80, \"quantity\": 180 },\r\n  { \"name\": \"Producto 47\", \"price\": 9.75, \"quantity\": 290 },\r\n  { \"name\": \"Producto 48\", \"price\": 15.30, \"quantity\": 60 },\r\n  { \"name\": \"Producto 49\", \"price\": 20.50, \"quantity\": 70 },\r\n  { \"name\": \"Producto 50\", \"price\": 16.90, \"quantity\": 80 }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/bulk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "purcharses",
+			"item": [
+				{
+					"name": "create purchases",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"productIds\": [\"a3e0c210-1234-4f9e-b401-2e871c5f5c01\", \"d7fbd8e1-4321-4fd0-b25e-2c8717c6aab2\"],\r\n    \"purchaseDate\": \"2025-04-18\",\r\n    \"totalAmount\": 239.90,\r\n    \"paymentMethod\": \"CREDIT_CARD\",\r\n    \"status\": \"COMPLETED\"\r\n  },\r\n  {\r\n    \"productIds\": [\"91bb4ea1-11cc-4a43-b3d9-79a7a77e9854\"],\r\n    \"purchaseDate\": \"2025-04-17\",\r\n    \"totalAmount\": 79.99,\r\n    \"paymentMethod\": \"CASH\",\r\n    \"status\": \"PENDING\"\r\n  },\r\n  {\r\n    \"productIds\": [\"9bc4ddea-5678-4043-b111-50a321ae9012\", \"d7fbd8e1-4321-4fd0-b25e-2c8717c6aab2\"],\r\n    \"purchaseDate\": \"2025-04-15\",\r\n    \"totalAmount\": 144.50,\r\n    \"paymentMethod\": \"DEBIT_CARD\",\r\n    \"status\": \"COMPLETED\"\r\n  },\r\n  {\r\n    \"productIds\": [\"e71b0b3f-7890-4c61-8a91-b8c9b8422d53\"],\r\n    \"purchaseDate\": \"2025-04-12\",\r\n    \"totalAmount\": 49.99,\r\n    \"paymentMethod\": \"CASH\",\r\n    \"status\": \"CANCELLED\"\r\n  },\r\n  {\r\n    \"productIds\": [\"f6c909f8-aaaa-46aa-9c5d-c2cccbf8fcfc\", \"9bc4ddea-5678-4043-b111-50a321ae9012\"],\r\n    \"purchaseDate\": \"2025-04-14\",\r\n    \"totalAmount\": 132.35,\r\n    \"paymentMethod\": \"CREDIT_CARD\",\r\n    \"status\": \"COMPLETED\"\r\n  },\r\n  {\r\n    \"productIds\": [\"91bb4ea1-11cc-4a43-b3d9-79a7a77e9854\", \"a3e0c210-1234-4f9e-b401-2e871c5f5c01\"],\r\n    \"purchaseDate\": \"2025-04-13\",\r\n    \"totalAmount\": 174.89,\r\n    \"paymentMethod\": \"DEBIT_CARD\",\r\n    \"status\": \"PENDING\"\r\n  },\r\n  {\r\n    \"productIds\": [\"e71b0b3f-7890-4c61-8a91-b8c9b8422d53\"],\r\n    \"purchaseDate\": \"2025-04-11\",\r\n    \"totalAmount\": 49.99,\r\n    \"paymentMethod\": \"CASH\",\r\n    \"status\": \"CANCELLED\"\r\n  },\r\n  {\r\n    \"productIds\": [\"f6c909f8-aaaa-46aa-9c5d-c2cccbf8fcfc\"],\r\n    \"purchaseDate\": \"2025-04-10\",\r\n    \"totalAmount\": 89.99,\r\n    \"paymentMethod\": \"CREDIT_CARD\",\r\n    \"status\": \"COMPLETED\"\r\n  },\r\n  {\r\n    \"productIds\": [\"a3e0c210-1234-4f9e-b401-2e871c5f5c01\"],\r\n    \"purchaseDate\": \"2025-04-09\",\r\n    \"totalAmount\": 119.90,\r\n    \"paymentMethod\": \"CASH\",\r\n    \"status\": \"PENDING\"\r\n  },\r\n  {\r\n    \"productIds\": [\"91bb4ea1-11cc-4a43-b3d9-79a7a77e9854\", \"f6c909f8-aaaa-46aa-9c5d-c2cccbf8fcfc\"],\r\n    \"purchaseDate\": \"2025-04-08\",\r\n    \"totalAmount\": 163.45,\r\n    \"paymentMethod\": \"DEBIT_CARD\",\r\n    \"status\": \"COMPLETED\"\r\n  }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/purchases/bulk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"purchases",
+								"bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/purchases",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"purchases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create purchase",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/purchases",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"purchases"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
