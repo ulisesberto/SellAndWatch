@@ -43,7 +43,7 @@ public class ProductController {
             productService.bulkCreateProduct(products);
             return ResponseEntity.ok("Created correctly");
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al guardar las compras");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error saving products");
         }
     }
 
