@@ -8,10 +8,8 @@ package ulises.projectDemo.Entities.Model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.UUID;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -19,7 +17,6 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import ulises.projectDemo.Entities.Enums.PaymentTypeEnum;
 import ulises.projectDemo.Entities.Enums.PurchaseStatusEnum;
 
@@ -32,9 +29,6 @@ public class Purchase {
 
     @Column(nullable = false)
     private LocalDate purchaseDate; // Fecha de la compra
-
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Product> products; // Lista de productos comprados
 
     @Column(nullable = false)
     private BigDecimal totalAmount; // Total de la compra
@@ -62,14 +56,6 @@ public class Purchase {
 
     public void setPurchaseDate(LocalDate purchaseDate) {
         this.purchaseDate = purchaseDate;
-    }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
     }
 
     public BigDecimal getTotalAmount() {

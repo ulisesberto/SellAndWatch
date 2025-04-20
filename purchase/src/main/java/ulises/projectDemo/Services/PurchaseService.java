@@ -33,9 +33,7 @@ public class PurchaseService {
 
     public Purchase updatePurchase(UUID id, Purchase updatedPurchase) {
         return purchaseRepository.findById(id).map(purchase -> {
-            purchase.setCustomerId(updatedPurchase.getCustomerId());
             purchase.setPurchaseDate(updatedPurchase.getPurchaseDate());
-            purchase.setProducts(updatedPurchase.getProducts());
             purchase.setTotalAmount(updatedPurchase.getTotalAmount());
             purchase.setPaymentMethod(updatedPurchase.getPaymentType());
             purchase.setStatus(updatedPurchase.getStatus());
