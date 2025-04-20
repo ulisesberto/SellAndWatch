@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ulises.purchaseApp.BusinessLogic.PurchaseBusinessLogic;
 import ulises.purchaseApp.Entities.Model.Purchase;
 import ulises.purchaseApp.Services.PurchaseService;
 
@@ -24,40 +25,47 @@ public class PurchaseController {
     @Autowired
     private PurchaseService purchaseService;
 
-    // GET: GetAll purchases
+    @Autowired
+    private PurchaseBusinessLogic purchaseBusinessLogic;
+
     @GetMapping
     public List<Purchase> getAllPurchases() {
         return purchaseService.getAllPurchases();
     }
 
-    // POST: create a new purchase
     @PostMapping
-    public Purchase createPurchase(@RequestBody Purchase purchase) {
-        return purchaseService.createPurchase(purchase);
+    public ResponseEntity<Purchase> createPurchase(@RequestBody Purchase purchase) {
+        try {
+            Purchase created = purchaseBusinessLogic.createPurchase(purchase);
+            return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
     }
 
-    // POST: create many purchases
     @PostMapping("/bulk")
     public ResponseEntity<String> bulkCreatePurchases(@RequestBody List<Purchase> purchases) {
         try {
             purchaseService.bulkCreatePurchase(purchases);
             return ResponseEntity.ok("Created correctly");
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al guardar las compras");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error while saving purchases");
         }
     }
 
-
-    // PUT: edit a extisting purchase
     @PutMapping("/{id}")
     public ResponseEntity<Purchase> updatePurchase(@PathVariable UUID id, @RequestBody Purchase updatedPurchase) {
         try {
-            Purchase updated = purchaseService.updatePurchase(id, updatedPurchase);
+            Purchase updated = purchaseBusinessLogic.updatePurchase(id, updatedPurchase);
             return ResponseEntity.ok(updated);
-        } catch (RuntimeException e) {
-            return ResponseEntity.notFound().build();
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        } catch (IllegalStateException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
 }
-
-

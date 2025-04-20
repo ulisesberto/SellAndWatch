@@ -1,6 +1,7 @@
 package ulises.purchaseApp.Services;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,8 @@ public class PurchaseService {
         return purchaseRepository.findAll();
     } 
     
-    public List<Purchase> getByIdPurchase(UUID id) {
-        return purchaseRepository.findAll();
+    public Optional<Purchase> getByIdPurchase(UUID id) {
+        return purchaseRepository.findById(id);
     }
 
     public Purchase createPurchase(Purchase purchase) {
