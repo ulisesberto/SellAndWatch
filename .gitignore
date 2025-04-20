@@ -1,0 +1,88 @@
+
+# ==================
+# Java
+# ==================
+*.class
+*.jar
+*.war
+*.ear
+
+# ==================
+# Logs
+# ==================
+*.log
+logs/
+*.out
+
+# ==================
+# Maven
+# ==================
+target/
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# ==================
+# Gradle (por si lo usás en algún microservicio)
+# ==================
+.gradle/
+build/
+
+# ==================
+# IntelliJ IDEA
+# ==================
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# ==================
+# VS Code
+# ==================
+.vscode/
+
+# ==================
+# OS-specific
+# ==================
+.DS_Store
+Thumbs.db
+
+# ==================
+# Env files
+# ==================
+.env
+.env.local
+.env.*
+
+# ==================
+# Flyway / Liquibase (archivos de migraciones temporales)
+# ==================
+*.h2.db
+*.mv.db
+
+# ==================
+# Spring Boot
+# ==================
+/*.db
+*.pid
+
+# ==================
+# Git
+# ==================
+*.orig
+
+# ==================
+# Test coverage reports
+# ==================
+coverage/
+jacoco.exec
+*.ec
+*.coverage
+*.coveragexml
+
+# ==================
+# Logs & temp
+# ==================
+tmp/
+temp/
