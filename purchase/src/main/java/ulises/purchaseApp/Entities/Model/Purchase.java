@@ -8,15 +8,19 @@ package ulises.purchaseApp.Entities.Model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Set;
 import java.util.UUID;
 
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import ulises.purchaseApp.Entities.Enums.PaymentTypeEnum;
 import ulises.purchaseApp.Entities.Enums.PurchaseStatusEnum;
 
@@ -24,21 +28,29 @@ import ulises.purchaseApp.Entities.Enums.PurchaseStatusEnum;
 public class Purchase {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
+     @ElementCollection
+    @CollectionTable(
+        name = "purchase_products", 
+        joinColumns = @JoinColumn(name = "purchase_id")
+    )
+    @Column(name = "product_id")  
+    private Set<UUID> productIds;  
+    
     @Column(nullable = false)
-    private LocalDate purchaseDate; // Fecha de la compra
+    private LocalDate purchaseDate; 
 
     @Column(nullable = false)
-    private BigDecimal totalAmount; // Total de la compra
+    private BigDecimal totalAmount; 
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private PaymentTypeEnum paymentMethod; // Método de pago
+    private PaymentTypeEnum paymentMethod; 
 
     @Enumerated(EnumType.STRING)
-    private PurchaseStatusEnum status; // Estado de la compra
+    private PurchaseStatusEnum status; 
 
     // Getters y Setters
 
@@ -80,5 +92,13 @@ public class Purchase {
 
     public void setStatus(PurchaseStatusEnum status) {
         this.status = status;
+    }
+
+    public Set<UUID> getProductIds() {
+        return productIds;
+    }
+
+    public void setProductIds(Set<UUID> productIds) {
+        this.productIds = productIds;
     }
 }
